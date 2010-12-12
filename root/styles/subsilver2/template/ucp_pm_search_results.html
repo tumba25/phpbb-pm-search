@@ -63,7 +63,7 @@
 			<td class="row1" width="100" align="center"><p class="topicauthor"><!-- IF messagerow.RECIPIENTS -->{L_MESSAGE_TO} {messagerow.RECIPIENTS}<!-- ELSE -->{L_MESSAGE_BY_AUTHOR} {messagerow.MESSAGE_AUTHOR_FULL}<!-- ENDIF --></p></td>
 
 			<td class="row1" width="120" align="center"><p class="topicdetails"><!-- IF messagerow.RECIPIENTS -->{L_SENT_AT}:<br /> {messagerow.SENT_TIME}<!-- ELSE -->{L_RECEIVED_AT}:<br /> {messagerow.SENT_TIME}<!-- ENDIF --></p></td>
-			<td class="row1" width="20" align="center"><p class="topicdetails"><input type="checkbox" class="radio" name="marked_msg_id[]" value="{messagerow.MESSAGE_ID}" /></p></td>
+			<td class="row1" width="20" align="center"><p class="topicdetails"><input type="checkbox" class="radio" name="marked_msg_id[{messagerow.S_ROW_COUNT}]" value="{messagerow.MESSAGE_ID}" /><input type="hidden" name="marked_msg_folder[{messagerow.S_ROW_COUNT}]" value="{messagerow.FOLDER_ID}" /></p></td>
 		</tr>
 	<!-- BEGINELSE -->
 		<tr>
@@ -84,7 +84,8 @@
 	</td>
 </tr>
 </table>
-
+<input type="hidden" name="pm_search_return" value="{S_PM_SEARCH_RETURN}" />
+<input type="hidden" name="in_pm_search" value="1" />
 <div style="padding: 2px;"></div>
 <!-- INCLUDE ucp_pm_message_footer.html -->
 <br clear="all" />
