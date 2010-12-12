@@ -1,5 +1,6 @@
 <!-- INCLUDE ucp_header.html -->
 <!-- INCLUDE ucp_pm_message_header.html -->
+<div class="panel pm-panel-message"><div>
 
 	<!-- IF .messagerow -->
 		<ul class="topiclist">
@@ -62,12 +63,12 @@
 	</ul>
 	<!-- ENDIF -->
 
+		<input type="hidden" name="pm_search_return" value="{S_PM_SEARCH_RETURN}" />
+		<input type="hidden" name="in_pm_search" value="1" />
+		</form>
 		<span class="corners-bottom"><span></span></span></div>
 	</div>
 
-		<input type="hidden" name="pm_search_return" value="{S_PM_SEARCH_RETURN}" />
-		<input type="hidden" name="in_pm_search" value="1" />
-	</form>
 	<form id="pm_viewfolder" method="post" action="{S_PM_SEARCH_RESULT_ACTION}">
 
 	<!-- IF FOLDER_CUR_MESSAGES neq 0 -->

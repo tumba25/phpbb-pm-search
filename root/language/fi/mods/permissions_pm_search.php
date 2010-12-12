@@ -1,12 +1,12 @@
 <?php
 /**
 *
-* Search PM folders [English]
+* Search PM folders [Finnish]
 *
 * @package language
-* @version $Id: permissions_pm_search.php 6 2009-11-15 08:32:26Z jari $
-* @copyright (c) 2009 Jari Kanerva tumba25@gmail.com
-* @license http://opensource.org/licenses/gpl-license.php GNU Public License
+* @version $Id: permissions_pm_search.php 18 2009-11-28 00:54:53Z jari $
+* @copyright (c) 2009 Peetra http://www.phpbb.com/community/memberlist.php?mode=viewprofile&u=327663
+* @license http://opensource.org/licenses/gpl-2.0.php GNU Public License version 2
 *
 */
 
@@ -36,10 +36,10 @@ if (empty($lang) || !is_array($lang))
 // in a url you again do not need to specify an order e.g., 'Click %sHERE%s' is fine
 
 // Adding new category
-$lang['permission_cat']['pm_search'] = 'PM Search';
+$lang['permission_cat']['pm_search'] = 'Search PM folders';
 
 // Adding the permissions
 $lang = array_merge($lang, array(
-	'acl_u_pm_search' => array('lang' => 'Can use PM search', 'cat' => 'pm'),
+	'acl_u_pm_search' => array('lang' => 'Voi käyttää YV-hakua.', 'cat' => 'pm'),
 ));
 ?>

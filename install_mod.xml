@@ -1,172 +1,174 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-<?xml-stylesheet type="text/xsl" href="./modx.prosilver.en.xsl" ?>
-<!--
-	NOTICE: Please open this file in your web browser. If presented with a security warning, you may safely tell it to allow the blocked content.
--->
-<!--For security purposes, please check: http://www.phpbb.com/mods/ for the latest version of this MOD. Although MODs are checked before being allowed in the MODs Database there is no guarantee that there are no security problems within the MOD. No support will be given for MODs not found within the MODs Database which can be found at http://www.phpbb.com/mods/-->
-<mod xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.phpbb.com/mods/xml/modx-1.2.2.xsd">
-<header>
-	<meta name="generator" content="MODX file generated with PP MODX Creator by tumba25" />
-	<license>http://opensource.org/licenses/gpl-license.php GNU General Public License v2</license>
-	<title lang="en">PM Search</title>
-	<description lang="en">Adds a search-box in your pm-folders.
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<?xml-stylesheet type="text/xsl" href="modx.prosilver.en.xsl"?>
+<!--NOTICE: Please open this file in your web browser. If presented with a security warning, you may safely tell it to allow the blocked content.-->
+<!--For security purposes, please check: http://www.phpbb.com/mods/ for the latest version of this MOD.\nAlthough MODs are checked before being allowed in the MODs Database there is no guarantee that there are no security problems within the MOD.\nNo support will be given for MODs not found within the MODs Database which can be found at http://www.phpbb.com/mods/-->
+<mod xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.phpbb.com/mods/xml/modx-1.2.3.xsd">
+	<header>
+		<meta name="generator" content="MODX file generated with PP MODX Creator by tumba25"/>
+		<meta name="generator" content="MODX file generated with PP MODX Creator by tumba25 (online version)"/>
+		<license><![CDATA[http://opensource.org/licenses/gpl-license.php GNU General Public License v2]]></license>
+		<title lang="en"><![CDATA[PM Search]]></title>
+		<description lang="en"><![CDATA[Adds a search-box in your pm-folders.
 Can search in subjects and / or messages.
 For senders and / or recepients.
 Case sensitive or insensitive.
 Can search for whole or partial words / sentenses.
 Can search for exact query, all words or any word.
-This MOD works only with MySQL.</description>
-	<author-notes lang="en">Note that this version of the MOD only works with MySQL.</author-notes>
-	<author-group>
-		<author>
-			<realname>Jari Kanerva</realname>
-			<username>tumba25</username>
-			<homepage>http://skripter.se</homepage>
-			<email>tumba25@gmail.com</email>
-		</author>
-	</author-group>
-	<mod-version>1.0.1.b</mod-version>
-	<installation>
-		<level>easy</level>
-		<time>300</time>
-		<target-version>3.0.4</target-version>
-	</installation>
-	<history>
-		<entry>
-			<date>2009-04-19</date>
-			<rev-version>1.0.1</rev-version>
-			<changelog lang="en">
-				<change>Resubmitted for validation. Validators are still nice people.</change>
-			</changelog>
-		</entry>
-		<entry>
-			<date>2009-04-15</date>
-			<rev-version>0.9.3</rev-version>
-			<changelog lang="en">
-				<change>Some of the changed files where missing from the 0.9.2 package</change>
-			</changelog>
-		</entry>
-		<entry>
-			<date>2009-03-12</date>
-			<rev-version>0.9.2</rev-version>
-			<changelog lang="en">
-				<change>Fixed bug in the instructions</change>
-				<change>Fixed bug with deleting and moving pm's</change>
-				<change>Fixed bug with the pagination. Thanks to updown for the fix</change>
-			</changelog>
-		</entry>
-	</history>
-	<link-group>
-		<link type="template" href="./contrib/subsilver2.xml" lang="ab">Instructions for subsilver2 style</link>
-	</link-group>
-</header>
-<action-group>
-	<copy>
-		<file from="root/*.*" to="*.*" />
-	</copy>
-	<open src="ucp.php">
-		<edit>
-			<find><![CDATA[$template->assign_var('S_IN_UCP', true);]]></find>
-			<action type="after-add"><![CDATA[// Search PM-folders
+This MOD works only with MySQL.]]></description>
+		<author-notes lang="en"><![CDATA[Note that this version of the MOD only works with MySQL.]]></author-notes>
+		<author-group>
+			<author>
+				<realname><![CDATA[Jari Kanerva]]></realname>
+				<username><![CDATA[tumba25]]></username>
+				<homepage><![CDATA[http://skripter.se]]></homepage>
+				<email><![CDATA[tumba25@gmail.com]]></email>
+			</author>
+		</author-group>
+		<mod-version>1.0.3</mod-version>
+		<installation>
+			<level>easy</level>
+			<time>300</time>
+			<target-version>3.0.6</target-version>
+		</installation>
+		<history>
+			<entry>
+				<date>2010-01-17</date>
+				<rev-version>1.0.3</rev-version>
+				<changelog lang="en">
+					<change><![CDATA[A fix for Explorer.]]></change>
+				</changelog>
+			</entry>
+			<entry>
+				<date>2009-11-18</date>
+				<rev-version>1.0.2</rev-version>
+				<changelog lang="en">
+					<change><![CDATA[Updated for phpBB 3.0.6]]></change>
+				</changelog>
+			</entry>
+			<entry>
+				<date>2009-04-19</date>
+				<rev-version>1.0.1</rev-version>
+				<changelog lang="en">
+					<change><![CDATA[Resubmitted for validation. Validators are still nice people.]]></change>
+				</changelog>
+			</entry>
+			<entry>
+				<date>2009-04-15</date>
+				<rev-version>0.9.3</rev-version>
+				<changelog lang="en">
+					<change><![CDATA[Some of the changed files where missing from the 0.9.2 package]]></change>
+				</changelog>
+			</entry>
+			<entry>
+				<date>2009-03-12</date>
+				<rev-version>0.9.2</rev-version>
+				<changelog lang="en">
+					<change><![CDATA[Fixed bug with the pagination. Thanks to updown for the fix]]></change>
+				</changelog>
+			</entry>
+		</history>
+		<link-group>
+			<link type="template" href="./contrib/subsilver2.xml" lang="en">Instructions for subsilver2 style</link>
+		</link-group>
+	</header>
+	<action-group>
+		<copy>
+			<file from="root/*.*" to="*.*"/>
+		</copy>
+		<open src="ucp.php">
+			<edit>
+				<find><![CDATA[$template->assign_var('S_IN_UCP', true);]]></find>
+				<action type="after-add"><![CDATA[// Search PM-folders
 // Include the functions here if there is some marked actions
 if(isset($_POST['in_pm_search']))
 {
 	include($phpbb_root_path . 'includes/pm_search/functions_pm_search.' . $phpEx);
 }]]></action>
-		</edit>
-	</open>
-	<open src="includes/functions_privmsgs.php">
-		<edit>
-			<find><![CDATA[	if (!sizeof($msg_ids))
+			</edit>
+		</open>
+		<open src="includes/functions_privmsgs.php">
+			<edit>
+				<find><![CDATA[	if (!sizeof($msg_ids))
 	{
 		return false;
 	}]]></find>
-			<action type="after-add"><![CDATA[	// PM Search
+				<action type="after-add"><![CDATA[	// PM Search
 	if(isset($_POST['in_pm_search']))
 	{
 		return(handle_pm_search_actions($mark_action, $msg_ids));
 	}]]></action>
-		</edit>
-	</open>
-	<open src="includes/ucp/ucp_pm.php">
-		<edit>
-			<find><![CDATA[		switch ($mode)
+			</edit>
+		</open>
+		<open src="includes/ucp/ucp_pm.php">
+			<edit>
+				<find><![CDATA[		switch ($mode)
 		{]]></find>
-			<action type="after-add"><![CDATA[			case 'search':
+				<action type="after-add"><![CDATA[			case 'search':
 				// PM Search
 				include($phpbb_root_path . 'includes/pm_search/pm_search.' . $phpEx);
 			break;]]></action>
-		</edit>
-		<edit>
-			<find><![CDATA[					$cur_folder_id	= request_var('cur_folder_id', PRIVMSGS_NO_BOX);]]></find>
-			<action type="after-add"><![CDATA[					// PM Search
+			</edit>
+			<edit>
+				<find><![CDATA[					$cur_folder_id	= request_var('cur_folder_id', PRIVMSGS_NO_BOX);]]></find>
+				<action type="after-add"><![CDATA[					// PM Search
 					if(isset($_POST['in_pm_search']))
 					{
 						pm_search_move_pm($move_msg_ids, $dest_folder);
 					}]]></action>
-		</edit>
-	</open>
-	<open src="includes/ucp/ucp_pm_viewfolder.php">
-		<edit>
-			<find><![CDATA[	else
+			</edit>
+		</open>
+		<open src="includes/ucp/ucp_pm_viewfolder.php">
+			<edit>
+				<find><![CDATA[	else
 	{
 		$pm_count = (!empty($folder[$folder_id]['num_messages'])) ? $folder[$folder_id]['num_messages'] : 0;
 		$sql_limit_time = '';
 	}]]></find>
-			<action type="after-add"><![CDATA[	// PM Search
+				<action type="after-add"><![CDATA[	// PM Search
 	if(!defined('IN_PM_SEARCH'))
 	{
 		include($phpbb_root_path . 'includes/pm_search/functions_pm_search.' . $phpEx);
 	}
 	$template->assign_vars(pm_search_viewfolder_setup($folder_id, $start));]]></action>
-		</edit>
-	</open>
-	<open src="includes/ucp/ucp_pm_viewmessage.php">
-		<edit>
-			<find><![CDATA[	$url = append_sid("{$phpbb_root_path}ucp.$phpEx", 'i=pm');]]></find>
-			<action type="after-add"><![CDATA[	// PM Search
+			</edit>
+		</open>
+		<open src="includes/ucp/ucp_pm_viewmessage.php">
+			<edit>
+				<find><![CDATA[	$url = append_sid("{$phpbb_root_path}ucp.$phpEx", 'i=pm');]]></find>
+				<action type="after-add"><![CDATA[	// PM Search
 	if(isset($_GET['hilit']))
 	{
 		include($phpbb_root_path . 'includes/pm_search/functions_pm_search.' . $phpEx);
 		$message = pm_search_hilit($message);
 	}]]></action>
-		</edit>
-	</open>
-	<open src="includes/ucp/info/ucp_pm.php">
-		<edit>
-			<find><![CDATA[				'view'		=> array('title' => 'UCP_PM_VIEW', 'auth' => 'cfg_allow_privmsg', 'display' => false, 'cat' => array('UCP_PM')),]]></find>
-			<action type="after-add"><![CDATA[				// PM Search
+			</edit>
+		</open>
+		<open src="includes/ucp/info/ucp_pm.php">
+			<edit>
+				<find><![CDATA[				'view'		=> array('title' => 'UCP_PM_VIEW', 'auth' => 'cfg_allow_privmsg', 'display' => false, 'cat' => array('UCP_PM')),]]></find>
+				<action type="after-add"><![CDATA[				// PM Search
 				'search' => array('title' => 'UCP_PM_SEARCH', 'auth' => 'cfg_allow_privmsg', 'display' => false, 'cat' => array('UCP_PM')),]]></action>
-		</edit>
-	</open>
-	<open src="language/en/acp/common.php">
-		<edit>
-			<find><![CDATA[	'UCP'					=> 'User Control Panel',]]></find>
-			<action type="after-add"><![CDATA[	'UCP_PM_SEARCH' => 'PM Search',]]></action>
-		</edit>
-	</open>
-	<open src="styles/prosilver/template/ucp_pm_message_header.html">
-		<edit>
-			<comment lang="en"><![CDATA[Just delete the line, it will be added in the next edit.]]></comment>
-			<find><![CDATA[<form id="viewfolder" method="post" action="{S_PM_ACTION}">]]></find>
-			<action type="replace-with"><![CDATA[]]></action>
-		</edit>
-		<edit>
-			<find><![CDATA[			<!-- IF U_FORWARD_PM --><div class="forwardpm-icon"><a title="{L_POST_FORWARD_PM}" href="{U_FORWARD_PM}"><span></span>{L_FORWARD_PM}</a></div><!-- ENDIF -->
-		</div>
-		<!-- ENDIF -->]]></find>
-			<action type="after-add"><![CDATA[	<!-- IF S_DISPLAY_SEARCHBOX -->
+			</edit>
+		</open>
+		<open src="language/en/acp/common.php">
+			<edit>
+				<find><![CDATA[	'UCP'					=> 'User Control Panel',]]></find>
+				<action type="after-add"><![CDATA[	'UCP_PM_SEARCH' => 'PM Search',]]></action>
+			</edit>
+		</open>
+		<open src="styles/prosilver/template/ucp_pm_message_header.html">
+			<edit>
+				<find><![CDATA[		<!-- IF TOTAL_MESSAGES or S_VIEW_MESSAGE -->]]></find>
+				<action type="before-add"><![CDATA[	<!-- IF S_DISPLAY_SEARCHBOX -->
 		<!-- INCLUDE ucp_pm_search.html -->
-	<!-- ENDIF -->
-
-<form id="viewfolder" method="post" action="{S_PM_ACTION}">]]></action>
-		</edit>
-	</open>
-	<diy-instructions lang="en">Copy the install directory to your forum's root path and run install/install.php.
+	<!-- ENDIF -->]]></action>
+			</edit>
+		</open>
+		<diy-instructions lang="en"><![CDATA[Copy the install directory to your forum's root path and run install/install.php.
 Go to ACP > System. Under Module management in the left field select User Control Panel.
 In the right field select Private messages.
 In the drop down menu next to the "Add module" button select PM Search and hit "Add module".
 Then enable that module and purge your forum cache.
-Go to ACP > Users and groups > Groups permissions, add the 'Can use PM search' permission to the right groups.</diy-instructions>
-</action-group>
+Go to ACP > Users and groups > Groups permissions, add the 'Can use PM search' permission to the right groups.]]></diy-instructions>
+	</action-group>
 </mod>

@@ -2,7 +2,7 @@
 /**
 *
 * @package pm_search
-* @version $Id: constants_pm_search.php 6 2009-11-15 08:32:26Z jari $
+* @version $Id: constants_pm_search.php 7 2009-11-15 08:34:33Z jari $
 * @copyright (c) 2009 Jari Kanerva tumba25@gmail.com
 * @license http://opensource.org/licenses/gpl-2.0.php GNU Public License version 2
 *

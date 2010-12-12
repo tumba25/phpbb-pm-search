@@ -1,55 +1,55 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<?xml-stylesheet type="text/xsl" href="./modx.prosilver.en.xsl"?>
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml-stylesheet type="text/xsl" href="./modx.prosilver.en.xsl" ?>
 <!--
 	NOTICE: Please open this file in your web browser. If presented with a security warning, you may safely tell it to allow the blocked content.
 -->
 <!--For security purposes, please check: http://www.phpbb.com/mods/ for the latest version of this MOD. Although MODs are checked before being allowed in the MODs Database there is no guarantee that there are no security problems within the MOD. No support will be given for MODs not found within the MODs Database which can be found at http://www.phpbb.com/mods/-->
-<mod xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.phpbb.com/mods/xml/modx-1.2.2.xsd">
-	<header>
-		<license>http://opensource.org/licenses/gpl-license.php GNU General Public License v2</license>
-		<title lang="en-gb">Search PM folders</title>
-		<description lang="en-gb">Adds a search-box in pm-folders.</description>
-		<author-notes lang="en">NOTE: This MOD is development quality and should not be used on a live forum. Do not install if you are not sure of what you are doing.</author-notes>
-		<author-group>
-			<author>
-				<realname>Jari Kanerva</realname>
-				<email>tumba25@gmail.com</email>
-				<username>tumba25</username>
-				<homepage>http://skripter.se</homepage>
-			</author>
-		</author-group>
-		<mod-version>1.0.0</mod-version>
-		<installation>
-			<level>easy</level>
-			<time>180</time>
-			<target-version>3.0.4</target-version>
-		</installation>
-		<link-group>
-			<link type="parent" lang="en" href="../install_mod.xml">Main install file</link>
-		</link-group>
-	</header>
-	<action-group>
-		<copy>
-			<file from="root/styles/subsilver2/template/ucp_pm_search.html" to="styles/subsilver2/template/ucp_pm_search.html" />
-			<file from="root/styles/subsilver2/template/ucp_pm_search_results.html" to="styles/subsilver2/template/ucp_pm_search_results.html" />
-		</copy>
-		<open src="styles/subsilver2/template/ucp_pm_message_footer.html">
-			<edit>
-				<find><![CDATA[<form name="sortmsg" method="post" action="{S_PM_ACTION}" style="margin:0px">]]></find>
-				<inline-edit>
-					<inline-find><![CDATA[{S_PM_ACTION}]]></inline-find>
-					<inline-action type="replace-with"><![CDATA[<!-- IF S_PM_SEARCH_RESULT_ACTION -->{S_PM_SEARCH_RESULT_ACTION}<!-- ELSE -->{S_PM_ACTION}<!-- ENDIF -->]]></inline-action>
-				</inline-edit>
-			</edit>
-		</open>
-		<open src="styles/subsilver2/template/ucp_pm_message_header.html">
-			<edit>
-				<find><![CDATA[		</table>
+<mod xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.phpbb.com/mods/xml/modx-1.2.3.xsd">
+<header>
+	<meta name="generator" content="MODX file generated with PP MODX Creator by tumba25" />
+	<license>http://opensource.org/licenses/gpl-license.php GNU General Public License v2</license>
+	<title lang="en">Search PM folders</title>
+	<description lang="en">Adds a search-box in pm-folders.</description>
+	<author-group>
+		<author>
+			<realname>Jari Kanerva</realname>
+			<username>tumba25</username>
+			<homepage>http://skripter.se</homepage>
+			<email>tumba25@gmail.com</email>
+		</author>
+	</author-group>
+	<mod-version>1.0.0</mod-version>
+	<installation>
+		<level>easy</level>
+		<time>180</time>
+		<target-version>3.0.6</target-version>
+	</installation>
+	<link-group>
+		<link type="parent" href="../install_mod.xml" lang="en">Main install file</link>
+	</link-group>
+</header>
+<action-group>
+	<copy>
+		<file from="root/styles/subsilver2/template/ucp_pm_search.html" to="styles/subsilver2/template/ucp_pm_search.html" />
+		<file from="root/styles/subsilver2/template/ucp_pm_search_results.html" to="styles/subsilver2/template/ucp_pm_search_results.html" />
+	</copy>
+	<open src="styles/subsilver2/template/ucp_pm_message_footer.html">
+		<edit>
+			<find><![CDATA[<form name="sortmsg" method="post" action="{S_PM_ACTION}" style="margin:0px">]]></find>
+			<inline-edit>
+				<inline-find><![CDATA[{S_PM_ACTION}]]></inline-find>
+				<inline-action type="replace-with"><![CDATA[<!-- IF S_PM_SEARCH_RESULT_ACTION -->{S_PM_SEARCH_RESULT_ACTION}<!-- ELSE -->{S_PM_ACTION}<!-- ENDIF -->]]></inline-action>
+			</inline-edit>
+		</edit>
+	</open>
+	<open src="styles/subsilver2/template/ucp_pm_message_header.html">
+		<edit>
+			<find><![CDATA[		</table>
 	</td>
 </tr>]]></find>
-				<action type="after-add"><![CDATA[		<!-- IF S_DISPLAY_SEARCHBOX --><!-- INCLUDE ucp_pm_search.html --><!-- ENDIF -->]]></action>
-			</edit>
-		</open>
-		<diy-instructions lang="en-gb">Go to ACP -> General and purge the cache.</diy-instructions>
-	</action-group>
+			<action type="after-add"><![CDATA[		<!-- IF S_DISPLAY_SEARCHBOX --><!-- INCLUDE ucp_pm_search.html --><!-- ENDIF -->]]></action>
+		</edit>
+	</open>
+	<diy-instructions lang="en">Go to ACP -> General and purge the cache.</diy-instructions>
+</action-group>
 </mod>
