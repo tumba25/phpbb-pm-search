@@ -32,7 +32,7 @@
 					</dt>
 					<dd class="info"><span><!-- IF messagerow.RECIPIENTS -->{L_SENT_AT}: {messagerow.SENT_TIME}<!-- ELSE -->{L_RECEIVED_AT}: {messagerow.SENT_TIME}<!-- ENDIF --></span></dd>
 					<!-- IF messagerow.FOLDER --><dd class="info"><span>{L_FOLDER}:  <a href="{messagerow.U_FOLDER}">{messagerow.FOLDER}</a></span></dd><!-- ENDIF -->
-					<dd class="mark" style="margin-top: -1.3em;"><input onclick="event.cancelBubble=true" type="checkbox" name="marked_msg_id[{messagerow.S_ROW_COUNT}]" value="{messagerow.MESSAGE_ID}" /><input type="hidden" name="marked_msg_folder[{messagerow.S_ROW_COUNT}]" value="{messagerow.FOLDER_ID}" /></dd>
+					<dd class="mark" style="margin-top: -1.3em;"><input onclick="event.cancelBubble=true" type="checkbox" name="marked_msg_id[]" value="{messagerow.MESSAGE_ID}" /></dd>
 				</dl>
 			</li>
 		<!-- END messagerow -->
@@ -65,8 +65,6 @@
 		<span class="corners-bottom"><span></span></span></div>
 	</div>
 
-		<input type="hidden" name="pm_search_return" value="{S_PM_SEARCH_RETURN}" />
-		<input type="hidden" name="in_pm_search" value="1" />
 	</form>
 	<form id="pm_viewfolder" method="post" action="{S_PM_SEARCH_RESULT_ACTION}">
 

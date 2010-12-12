@@ -29,11 +29,7 @@ if(!$auth->acl_get('u_pm_search'))
 }
 
 // Get the functions file.
-// Just check that it's not included already
-if(!defined('IN_PM_SEARCH'))
-{
-	include($phpbb_root_path . 'includes/pm_search/functions_pm_search.' . $phpEx);
-}
+include($phpbb_root_path . 'includes/pm_search/functions_pm_search.' . $phpEx);
 
 // Get the query so we'll have something to do
 $keywords = utf8_normalize_nfc(trim(request_var('keywords', '', true)));
@@ -148,7 +144,7 @@ if($folder_id != PRIVMSGS_NO_BOX && $folder_id != PRIVMSGS_OUTBOX)
 {
 	foreach($folder as $f_id => $folder_ary)
 	{
-		if($f_id == PRIVMSGS_OUTBOX || $f_id == PRIVMSGS_SENTBOX)
+		if($f_id == PRIVMSGS_OUTBOX || $f_id == PRIVMSGS_SENTBOX || $f_id == $folder_id)
 		{
 			continue;
 		}
@@ -645,7 +641,6 @@ $tpl_file = 'ucp_pm_search_results';
 
 // Send vars to template
 $template->assign_vars(array(
-	'CUR_FOLDER_ID' => $folder_id,
 	'PAGINATION' => generate_pagination(append_sid("{$phpbb_root_path}ucp.$phpEx", "i=pm&amp;mode=search&amp;action=view_folder&amp;f=$folder_id&amp;$u_sort_param&amp;exact=$search_exact&amp;case=$search_case&amp;current=$search_current&amp;author=$search_author&amp;keywords=$keywords"), $pm_count, $config['topics_per_page'], $start),
 	'PAGE_NUMBER' => on_page($pm_count, $config['topics_per_page'], $start),
 	'TOTAL_MESSAGES' => (($pm_count == 1) ? $user->lang['VIEW_PM_MESSAGE'] : sprintf($user->lang['VIEW_PM_MESSAGES'], $pm_count)),
@@ -668,7 +663,6 @@ $template->assign_vars(array(
 	'U_POST_NEW_TOPIC' => ($auth->acl_get('u_sendpm')) ? append_sid("{$phpbb_root_path}ucp.$phpEx", 'i=pm&amp;mode=compose') : '',
 	'S_PM_ACTION' => append_sid("{$phpbb_root_path}ucp.$phpEx", "i=pm&amp;mode=view&amp;action=view_folder&amp;f=$folder_id" . (($start !== 0) ? "&amp;start=$start" : '')),
 	'S_PM_SEARCH_RESULT_ACTION' => append_sid("{$phpbb_root_path}ucp.$phpEx", "i=pm&amp;mode=search&amp;action=view_folder&amp;f=$folder_id&amp;exact=$search_exact&amp;case=$search_case&amp;current=$search_current&amp;author=$search_author&amp;keywords=$keywords" . (($start !== 0) ? "&amp;start=$start" : '')),
-	'S_PM_SEARCH_RETURN' => "i=pm&amp;mode=search&amp;action=view_folder&amp;f=$folder_id&amp;exact=$search_exact&amp;case=$search_case&amp;current=$search_current&amp;author=$search_author&amp;keywords=$keywords" . (($start !== 0) ? "&amp;start=$start" : ''),
 	'FOLDER_CUR_MESSAGES' => $pm_count,
 
 	'S_SEARCH_EXACT' => $search_exact,

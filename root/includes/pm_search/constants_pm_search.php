@@ -18,8 +18,6 @@ if (!defined('IN_PHPBB'))
 	exit;
 }
 
-define('IN_PM_SEARCH', true);
-
 define('PM_SENDER', 1);
 define('PM_RECIPIENT', 2);
 define('PM_BOTH', 3);
