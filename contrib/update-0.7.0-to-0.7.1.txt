@@ -1,0 +1,27 @@
+##############################################################
+## MOD Title: Search PM folders
+## MOD Author: tumba25
+##
+## MOD Version: 0.7.1
+##
+## Update instructions from version 0.7.0 -> 0.7.1
+##
+## Included files:
+## includes/pm_search/constants_pm_search.php
+## includes/pm_search/functions_pm_search.php
+## includes/pm_search/ucp_pm_search.php
+## language/en/mods/search_pm_folders.php
+## styles/prosilver/template/ucp_pm_search.html
+## styles/prosilver/template/ucp_pm_search_results.html
+## styles/subsilver2/template/ucp_pm_search.html
+## styles/subsilver2/template/ucp_pm_search_results.html
+##
+##############################################################
+## Before Adding This MOD To Your Forum, You Should Back Up All Files Related To This MOD
+##############################################################
+Just changed to the install instructions.
+
+#
+#-----[ EOM ]---------------------------------------------
+#
+Save and close all open files

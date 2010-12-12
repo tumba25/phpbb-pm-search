@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml-stylesheet type="text/xsl" href="./modx.prosilver.en.xsl"?>
+<!--
+	NOTICE: Please open this file in your web browser. If presented with a security warning, you may safely tell it to allow the blocked content.
+-->
+<!--For security purposes, please check: http://www.phpbb.com/mods/ for the latest version of this MOD. Although MODs are checked before being allowed in the MODs Database there is no guarantee that there are no security problems within the MOD. No support will be given for MODs not found within the MODs Database which can be found at http://www.phpbb.com/mods/-->
+<mod xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.phpbb.com/mods/xml/modx-1.2.2.xsd">
+	<header>
+		<license>http://opensource.org/licenses/gpl-license.php GNU General Public License v2</license>
+		<title lang="en-gb">PM Search</title>
+		<description lang="en-gb">Adds a search-box in your pm-folders.</description>
+		<author-group>
+			<author>
+				<realname>Jari Kanerva</realname>
+				<email>tumba25@gmail.com</email>
+				<username>tumba25</username>
+				<homepage>http://skripter.se</homepage>
+			</author>
+		</author-group>
+		<mod-version>0.9.0</mod-version>
+		<installation>
+			<level>easy</level>
+			<time>180</time>
+			<target-version>3.0.4</target-version>
+		</installation>
+		<link-group>
+			<link type="template" lang="en-gb" href="./contrib/subsilver2.xml">Instructions for subsilver2 style</link>
+		</link-group>
+		<history>
+			<entry>
+				<date>2009-03-07</date>
+				<rev-version>0.9.0</rev-version>
+				<changelog lang="en-gb">
+					<change>No bug reports for a while so I decided rename the MOD and go RC.</change>
+					<change>Renamed some files and made some language changes.</change>
+					<change>Cleaned the code and added som checks.</change>
+				</changelog>
+			</entry>
+			<entry>
+				<date>2009-03-03</date>
+				<rev-version>0.7.4</rev-version>
+				<changelog lang="en-gb">
+					<change>Fixed bug user_id should be group_id.</change>
+				</changelog>
+			</entry>
+			<entry>
+				<date>2009-03-02</date>
+				<rev-version>0.7.3</rev-version>
+				<changelog lang="en-gb">
+					<change>Added hiliting.</change>
+					<change>The Prosilver "No message"-error should be fixed.</change>
+				</changelog>
+			</entry>
+			<entry>
+				<date>2009-03-01</date>
+				<rev-version>0.7.2</rev-version>
+				<changelog lang="en-gb">
+					<change>Some changes in the instructions.</change>
+					<change>Changes in the Subsilver2 templates. Thanks Jane Doe.</change>
+					<change>Minor edits to the Prosilver template.</change>
+				</changelog>
+			</entry>
+			<entry>
+				<date>2009-03-01</date>
+				<rev-version>0.7.1</rev-version>
+				<changelog lang="en-gb">
+					<change>Fixed some language errors. Thanks oddfish.</change>
+					<change>Fixed missing copy in the install instructions.</change>
+				</changelog>
+			</entry>
+			<entry>
+				<date>2009-03-01</date>
+				<rev-version>0.7.0</rev-version>
+				<changelog lang="en-gb">
+					<change>Shows what folder the PM is in.</change>
+					<change>Some template changes.</change>
+					<change>Added working "Sort by Author".</change>
+					<change>Did some cleaning up in the code.</change>
+					<change>Added searching in subject.</change>
+					<change>And since all mayor features are done and it's only beta testing left to do I jumped version number again.</change>
+				</changelog>
+			</entry>
+			<entry>
+				<date>2009-02-28</date>
+				<rev-version>0.5.1</rev-version>
+				<changelog lang="en-gb">
+					<change>Added u_pm_search permission for groups and users.</change>
+					<change>Added receiver caching to save on the queries.</change>
+					<change>Bug, recognises sent PM's even if they are in other folder than outbox and sent messages.</change>
+					<change>Added handling of sorting.</change>
+				</changelog>
+			</entry>
+			<entry>
+				<date>2009-02-26</date>
+				<rev-version>0.5.0</rev-version>
+				<changelog lang="en-gb">
+					<change>Added template file for the search results.</change>
+					<change>Added better handling of recipients in the results.</change>
+					<change>Bug fix, did not find recipients if PM's had more than one recipient.</change>
+					<change>Since all search features are done and the search is basically working I decided to jump to a higher version-number.</change>
+				</changelog>
+			</entry>
+			<entry>
+				<date>2009-02-25</date>
+				<rev-version>0.1.7</rev-version>
+				<changelog lang="en-gb">
+					<change>Added key for search all or any word.</change>
+					<change>Added key for search on whole word's or partial words.</change>
+				</changelog>
+			</entry>
+			<entry>
+				<date>2009-02-24</date>
+				<rev-version>0.1.6</rev-version>
+				<changelog lang="en-gb">
+					<change>Fixed bug in the author search.</change>
+					<change>Added search for sender, recipient or both in the author search.</change>
+				</changelog>
+			</entry>
+			<entry>
+				<date>2009-02-23</date>
+				<rev-version>0.1.5</rev-version>
+				<changelog lang="en-gb">
+					<change>The installation-package contained wrong files... Replaced them.</change>
+				</changelog>
+			</entry>
+			<entry>
+				<date>2009-02-23</date>
+				<rev-version>0.1.4</rev-version>
+				<changelog lang="en-gb">
+					<change>Moved the files around some and added a functions file.</change>
+					<change>Added author search.</change>
+					<change>Added support for pagination.</change>
+					<change>Changed the descriptions in the language file.</change>
+				</changelog>
+			</entry>
+			<entry>
+				<date>2009-02-22</date>
+				<rev-version>0.1.3</rev-version>
+				<changelog lang="en-gb">
+					<change>Changes to the DB queries to better handle international characters.</change>
+					<change>Added case sensitive searches.</change>
+				</changelog>
+			</entry>
+			<entry>
+				<date>2009-02-21</date>
+				<rev-version>0.1.2</rev-version>
+				<changelog lang="en-gb">
+					<change>Added missing edit to the instructions.</change>
+					<change>Bugfixes.</change>
+				</changelog>
+			</entry>
+			<entry>
+				<date>2009-02-20</date>
+				<rev-version>0.1.1</rev-version>
+				<changelog lang="en-gb">
+					<change>Added advanced search options.</change>
+					<change>Added search for exact query.</change>
+					<change>Added search in current folder.</change>
+					<change>Put most code in separate files for easier updates.</change>
+				</changelog>
+			</entry>
+			<entry>
+				<date>2009-02-18</date>
+				<rev-version>0.1.0</rev-version>
+				<changelog lang="en-gb">
+					<change>First beta.</change>
+				</changelog>
+			</entry>
+		</history>
+	</header>
+	<action-group>
+		<copy>
+			<file from="root/includes/pm_search/*.*" to="includes/pm_search/*.*" />
+			<file from="root/language/en/mods/search_pm_folders.php" to="language/en/mods/search_pm_folders.php" />
+			<file from="root/language/en/mods/permissions_pm_search.php" to="language/en/mods/permissions_pm_search.php" />
+			<file from="root/styles/prosilver/template/ucp_pm_search.html" to="styles/prosilver/template/ucp_pm_search.html" />
+			<file from="root/styles/prosilver/template/ucp_pm_search_results.html" to="styles/prosilver/template/ucp_pm_search_results.html" />
+		</copy>
+		<open src="includes/ucp/ucp_pm.php">
+			<edit>
+				<find><![CDATA[		switch ($mode)
+		{]]></find>
+				<action type="after-add"><![CDATA[			case 'search':
+				// PM Search
+				include($phpbb_root_path . 'includes/pm_search/pm_search.' . $phpEx);
+			break;]]></action>
+			</edit>
+		</open>
+		<open src="includes/ucp/ucp_pm_viewfolder.php">
+			<edit>
+				<find><![CDATA[	else
+	{
+		$pm_count = (!empty($folder[$folder_id]['num_messages'])) ? $folder[$folder_id]['num_messages'] : 0;
+		$sql_limit_time = '';
+	}]]></find>
+				<action type="after-add"><![CDATA[	// PM Search
+	include($phpbb_root_path . 'includes/pm_search/functions_pm_search.' . $phpEx);
+	$template->assign_vars(pm_search_viewfolder_setup($folder_id, $start));]]></action>
+			</edit>
+		</open>
+		<open src="includes/ucp/ucp_pm_viewmessage.php">
+			<edit>
+				<find><![CDATA[	$url = append_sid("{$phpbb_root_path}ucp.$phpEx", 'i=pm');]]></find>
+				<action type="after-add"><![CDATA[	// PM Search
+	if(isset($_GET['hilit']))
+	{
+		include($phpbb_root_path . 'includes/pm_search/functions_pm_search.' . $phpEx);
+		$message = pm_search_hilit($message);
+	}]]></action>
+			</edit>
+		</open>
+		<open src="includes/ucp/info/ucp_pm.php">
+			<edit>
+				<find><![CDATA[				'view'		=> array('title' => 'UCP_PM_VIEW', 'auth' => 'cfg_allow_privmsg', 'display' => false, 'cat' => array('UCP_PM')),]]></find>
+				<action type="after-add"><![CDATA[				// PM Search
+				'search' => array('title' => 'UCP_PM_SEARCH', 'auth' => 'cfg_allow_privmsg', 'display' => false, 'cat' => array('UCP_PM')),]]></action>
+			</edit>
+		</open>
+		<open src="language/en/acp/common.php">
+			<edit>
+				<find><![CDATA[	'UCP'					=> 'User Control Panel',]]></find>
+				<action type="after-add"><![CDATA[	'UCP_PM_SEARCH' => 'PM Search',]]></action>
+			</edit>
+		</open>
+		<open src="styles/prosilver/template/ucp_pm_message_header.html">
+			<edit>
+				<comment lang="en"><![CDATA[Just delete the line, it will be added in the next edit.]]></comment>
+				<find><![CDATA[<form id="viewfolder" method="post" action="{S_PM_ACTION}">]]></find>
+				<action type="replace-with"></action>
+			</edit>
+			<edit>
+				<find><![CDATA[			<!-- IF U_FORWARD_PM --><div class="forwardpm-icon"><a title="{L_POST_FORWARD_PM}" href="{U_FORWARD_PM}"><span></span>{L_FORWARD_PM}</a></div><!-- ENDIF -->
+		</div>
+		<!-- ENDIF -->]]></find>
+				<action type="after-add"><![CDATA[	<!-- IF S_DISPLAY_SEARCHBOX -->
+		<!-- INCLUDE pm_search.html -->
+	<!-- ENDIF -->
+
+<form id="viewfolder" method="post" action="{S_PM_ACTION}">]]></action>
+			</edit>
+		</open>
+		<diy-instructions lang="en-gb">Copy the install directory to your forum's root path and run install/install.php.
+Go to ACP > System. Under Module management in the left field select User Control Panel.
+In the right field select Private messages.
+In the drop down menu next to the "Add module" button select PM Search and hit "Add module".
+Then enable that module and purge your forum cache.
+Go to ACP > Users and groups > Groups permissions, add the 'Can use PM search' permission to the right groups.</diy-instructions>
+	</action-group>
+</mod>

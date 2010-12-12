@@ -1,0 +1,45 @@
+##############################################################
+## MOD Title: Search PM folders
+## MOD Author: tumba25
+##
+## MOD Version: 0.1.2
+##
+## Update instructions from version 0.1.1 -> 0.1.2
+##
+## Included files:
+## includes/ucp/ucp_pm_search.php
+## language/en/mods/search_pm_folders.php
+## styles/prosilver/template/ucp_pm_search.html
+## styles/subsilver2/template/ucp_pm_search.html
+##
+## Files To Edit:
+## language/en/acp/commen.php
+##
+##
+##############################################################
+## Before Adding This MOD To Your Forum, You Should Back Up All Files Related To This MOD
+##############################################################
+#
+#-----[ Copy ]---------------------------------------------
+#
+root/includes/ucp/ucp_pm_search.php -> includes/ucp/ucp_pm_search.php
+
+#
+#-----[ Open ]---------------------------------------------
+#
+language/en/acp/commen.php
+
+#
+#-----[ Find ]---------------------------------------------
+#
+	'UCP'					=> 'User Control Panel',
+
+#
+#-----[ After add ]---------------------------------------------
+#
+	'UCP_PM_SEARCH' => 'Search PM folders',
+
+#
+#-----[ EOM ]---------------------------------------------
+#
+Save and close all open files

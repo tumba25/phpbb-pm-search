@@ -1,0 +1,122 @@
+##############################################################
+## MOD Title: Search PM folders
+## MOD Author: tumba25
+##
+## MOD Version: 0.1.1
+##
+## Update instructions from version 0.1.0 -> 0.1.1
+##
+## Included files:
+## includes/ucp/ucp_pm_search.php
+## language/en/mods/search_pm_folders.php
+## styles/prosilver/template/ucp_pm_search.html
+## styles/subsilver2/template/ucp_pm_search.html
+##
+## Files To Edit:
+## includes/ucp/pm_viewfolder.php
+## language/en/ucp.php
+## styles/prosilver/template/ucp_pm_message_header.html
+## styles/subsilver2/template/ucp_pm_message_header.html
+##
+##
+##############################################################
+## Before Adding This MOD To Your Forum, You Should Back Up All Files Related To This MOD
+##############################################################
+#
+#-----[ Copy ]---------------------------------------------
+#
+root/includes/ucp/ucp_pm_search.php -> includes/ucp/ucp_pm_search.php
+root/language/en/mods/search_pm_folders.php -> language/en/mods/search_pm_folders.php
+root/styles/prosilver/template/ucp_pm_search.html -> styles/prosilver/template/ucp_pm_search.html
+root/styles/subsilver2/template/ucp_pm_search.html -> styles/subsilver2/template/ucp_pm_search.html
+
+#
+#-----[ Open ]---------------------------------------------
+#
+language/en/ucp.php
+
+#
+#-----[ Find ]---------------------------------------------
+#
+	// Search PM-folder
+	'SEARCH_PM_FOLDERS' => 'Search PM folder…',
+	'UCP_PM_SEARCH' => 'Search PM folders',
+
+#
+#-----[ Replace with ]---------------------------------------------
+#
+Nothing, just delete it.
+
+#
+#-----[ Open ]---------------------------------------------
+#
+styles/prosilver/template/ucp_pm_message_header.html
+
+#
+#-----[ Find ]---------------------------------------------
+#
+<form id="viewfolder" method="post" action="{S_PM_ACTION}">
+
+#
+#-----[ Replace with ]---------------------------------------------
+#
+Nothing, just delete it.
+
+#
+#-----[ Find ]---------------------------------------------
+#
+		<div class="search-box" style="float: left;">
+			<form method="post" id="pm-search" action="{S_PM_ACTION}">
+			<fieldset>
+				<input class="inputbox search tiny" type="text" name="keywords" id="search_keywords" size="20" value="{SEARCH_KEYWORDS}" onclick="if (this.value == '{LA_SEARCH_PM_FOLDERS}') this.value = '';" onblur="if (this.value == '') this.value = '{LA_SEARCH_PM_FOLDERS}';" />
+				<input type="hidden" name="mode" value="search" />
+				<input class="button2" type="submit" value="{L_SEARCH}" />
+			</fieldset>
+			</form>
+		</div>
+
+#
+#-----[ Replace with ]---------------------------------------------
+#
+		<!-- INCLUDE ucp_pm_search.html -->
+
+#
+#-----[ Open ]---------------------------------------------
+#
+styles/subsilver2/template/ucp_pm_message_header.html
+
+#
+#-----[ Find ]---------------------------------------------
+#
+					<!-- IF S_DISPLAY_SEARCHBOX -->
+					<td>
+						<form method="post" name="search" action="{S_PM_ACTION}">
+							<span class="gensmall">{L_SEARCH_FOR}:</span>
+							<input type="hidden" name="mode" value="search" />
+							<input class="post" type="text" name="keywords" size="20" />
+							<input class="btnlite" type="submit" value="{L_GO}" />
+						</form>
+					</td>
+					<!-- ENDIF -->
+
+#
+#-----[ Replace with ]---------------------------------------------
+#
+Nothing, just delete.
+
+#
+#-----[ Find ]---------------------------------------------
+#
+		</table>
+	</td>
+</tr>
+
+#
+#-----[ After add ]---------------------------------------------
+#
+					<!-- IF S_DISPLAY_SEARCHBOX --><!-- INCLUDE ucp_pm_search.html --><!-- ENDIF -->
+
+#
+#-----[ EOM ]---------------------------------------------
+#
+Save and close all open files

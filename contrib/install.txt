@@ -1,0 +1,227 @@
+##############################################################
+## MOD Title: Search PM folders
+## MOD Author: tumba25
+##
+## MOD Version: 0.1.0
+##
+## Supports + and - but not ""
+##
+## Will add a checkbox for searching in all or current folder later but for now we'll just assume that it's set to all folders.
+##
+## Included files:
+## ucp_pm_search.php
+##
+## Files To Edit:
+## includes/ucp/ucp_pm.php
+## includes/ucp/ucp_pm_viewfolder.php
+## includes/ucp/info/ucp_pm.php
+## lanuages/en/ucp.php
+## styles/prosilver/template/ucp_pm_message_header.html
+##
+##
+##############################################################
+## Before Adding This MOD To Your Forum, You Should Back Up All Files Related To This MOD
+##############################################################
+#
+#-----[ Copy ]---------------------------------------------
+#
+ucp_pm_search.php -> includes/ucp/ucp_pm_search.php
+
+#
+#-----[ Open ]---------------------------------------------
+#
+includes/ucp/ucp_pm.php
+
+#
+#-----[ Find ]---------------------------------------------
+#
+		include($phpbb_root_path . 'includes/functions_privmsgs.' . $phpEx);
+
+#
+#-----[ After add ]---------------------------------------------
+#
+		// Search pm-folders
+		if($mode == 'search')
+		{
+			$search_keywords = utf8_normalize_nfc(trim(request_var('keywords', '', true)));
+			if($search_keywords == '')
+			{
+				$mode = 'view';
+			}
+		}
+
+#
+#-----[ Find ]---------------------------------------------
+#
+		switch ($mode)
+		{
+
+#
+#-----[ After add ]---------------------------------------------
+#
+			case 'search':
+				// Search pm-folders
+				include($phpbb_root_path . 'includes/ucp/ucp_pm_search.' . $phpEx);
+			break;
+
+#
+#-----[ Open ]---------------------------------------------
+#
+includes/ucp/ucp_pm_viewfolder.php
+
+#
+#-----[ Find ]---------------------------------------------
+#
+	else
+	{
+		$pm_count = (!empty($folder[$folder_id]['num_messages'])) ? $folder[$folder_id]['num_messages'] : 0;
+		$sql_limit_time = '';
+	}
+
+#
+#-----[ After add ]---------------------------------------------
+#
+	// BEGIN Search PM-folders
+	// Check if the search-module is active
+	$sql = 'SELECT module_enabled FROM ' . MODULES_TABLE . '
+		WHERE module_basename = "pm"
+		AND module_mode = "search"';
+	$result = $db->sql_query($sql);
+	$pm_search_enabled = (int) $db->sql_fetchfield('module_enabled');
+	$db->sql_freeresult($result);
+	// END Search PM-folders
+
+#
+#-----[ Find ]---------------------------------------------
+#
+		'S_TOPIC_ICONS'			=> ($config['enable_pm_icons']) ? true : false,
+
+#
+#-----[ After add ]---------------------------------------------
+#
+		// Search PM-folders
+		'S_DISPLAY_SEARCHBOX'	=> ($auth->acl_get('u_search') && $config['load_search'] && $pm_search_enabled) ? true : false,
+		'S_PM_SEARCHBOX_ACTION'	=> append_sid("{$phpbb_root_path}ucp.$phpEx", 'mode=search'),
+		'SEARCH_KEYWORDS' => $user->lang['SEARCH_PM_FOLDERS'],
+		// END Search PM-folders
+
+#
+#-----[ Open ]---------------------------------------------
+#
+includes/ucp/info/ucp_pm.php
+
+#
+#-----[ Find ]---------------------------------------------
+#
+				'view'		=> array('title' => 'UCP_PM_VIEW', 'auth' => 'cfg_allow_privmsg', 'display' => false, 'cat' => array('UCP_PM')),
+
+#
+#-----[ After add ]---------------------------------------------
+#
+				// Search PM-folders
+				'search' => array('title' => 'UCP_PM_SEARCH', 'auth' => 'cfg_allow_privmsg', 'display' => false, 'cat' => array('UCP_PM')),
+
+#
+#-----[ Open ]---------------------------------------------
+#
+lanuages/en/ucp.php
+
+#
+#-----[ Find ]---------------------------------------------
+#
+	'NO_NONMEMBER'	=> 'No non-member groups',
+
+#
+#-----[ After add ]---------------------------------------------
+#
+	// Search PM-folder
+	'SEARCH_PM_FOLDERS' => 'Search PM folder…',
+	'UCP_PM_SEARCH' => 'Search PM folders',
+
+#
+#-----[ Open ]---------------------------------------------
+#
+styles/prosilver/template/ucp_pm_message_header.html
+
+#
+#-----[ Find ]---------------------------------------------
+#
+<form id="viewfolder" method="post" action="{S_PM_ACTION}">
+
+#
+#-----[ Replace with ]---------------------------------------------
+#
+Nothing, just delete it.
+
+#
+#-----[ Find ]---------------------------------------------
+#
+			<!-- IF U_FORWARD_PM --><div class="forwardpm-icon"><a title="{L_POST_FORWARD_PM}" href="{U_FORWARD_PM}"><span></span>{L_FORWARD_PM}</a></div><!-- ENDIF -->
+		</div>
+		<!-- ENDIF -->
+
+#
+#-----[ After add ]---------------------------------------------
+#
+	<!-- IF S_DISPLAY_SEARCHBOX -->
+		<div class="search-box" style="float: left;">
+			<form method="post" id="pm-search" action="{S_PM_ACTION}">
+			<fieldset>
+				<input class="inputbox search tiny" type="text" name="keywords" id="search_keywords" size="20" value="{SEARCH_KEYWORDS}" onclick="if (this.value == '{LA_SEARCH_PM_FOLDERS}') this.value = '';" onblur="if (this.value == '') this.value = '{LA_SEARCH_PM_FOLDERS}';" />
+				<input type="hidden" name="mode" value="search" />
+				<input class="button2" type="submit" value="{L_SEARCH}" />
+			</fieldset>
+			</form>
+		</div>
+	<!-- ENDIF -->
+
+<form id="viewfolder" method="post" action="{S_PM_ACTION}">
+
+#
+#-----[ Open ]---------------------------------------------
+#
+styles/subsilver2/template/ucp_pm_message_header.html
+
+#
+#-----[ Find ]---------------------------------------------
+#
+					<td class="nav" valign="middle" nowrap="nowrap">&nbsp;{PAGE_NUMBER}<br /></td>
+
+#
+#-----[ Before add ]---------------------------------------------
+#
+					<!-- IF S_DISPLAY_SEARCHBOX -->
+					<td>
+						<form method="post" name="search" action="{S_PM_ACTION}">
+							<span class="gensmall">{L_SEARCH_FOR}:</span>
+							<input type="hidden" name="mode" value="search" />
+							<input class="post" type="text" name="keywords" size="20" />
+							<input class="btnlite" type="submit" value="{L_GO}" />
+						</form>
+					</td>
+					<!-- ENDIF -->
+
+#
+#-----[ Find ]---------------------------------------------
+#
+<td class="gensmall" nowrap="nowrap" width="100%">&nbsp;[ <b>{FOLDER_CUR_MESSAGES}</b>/{FOLDER_MAX_MESSAGES} {L_MESSAGES} ({FOLDER_PERCENT}%) ]&nbsp;</td>
+
+#
+#-----[ Replace with ]---------------------------------------------
+#
+<td class="gensmall" nowrap="nowrap" width="50%">&nbsp;[ <b>{FOLDER_CUR_MESSAGES}</b>/{FOLDER_MAX_MESSAGES} {L_MESSAGES} ({FOLDER_PERCENT}%) ]&nbsp;</td>
+
+#
+#-----[ Find ]---------------------------------------------
+#
+<td class="gensmall" nowrap="nowrap" width="100%">&nbsp;[ <b>{FOLDER_CUR_MESSAGES}</b> {L_MESSAGES} ]&nbsp;</td>
+
+#
+#-----[ Replace with ]---------------------------------------------
+#
+<td class="gensmall" nowrap="nowrap" width="50%">&nbsp;[ <b>{FOLDER_CUR_MESSAGES}</b> {L_MESSAGES} ]&nbsp;</td>
+
+#
+#-----[ EOM ]---------------------------------------------
+#
+Save and close all open files

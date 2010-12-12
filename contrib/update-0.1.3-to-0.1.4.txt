@@ -1,0 +1,121 @@
+##############################################################
+## MOD Title: Search PM folders
+## MOD Author: tumba25
+##
+## MOD Version: 0.1.4
+##
+## Update instructions from version 0.1.3 -> 0.1.4
+##
+## Included files:
+## includes/pm_search/functions_pm_search.php
+## includes/pm_search/ucp_pm_search.php
+## language/en/mods/search_pm_folders.php
+## styles/prosilver/template/ucp_pm_search.html
+## styles/subsilver2/template/ucp_pm_search.html
+##
+## Files To Edit:
+## includes/ucp/ucp_pm.php
+## includes/ucp/ucp_pm_viewfolder.php
+##
+##############################################################
+## Before Adding This MOD To Your Forum, You Should Back Up All Files Related To This MOD
+##############################################################
+#
+#-----[ Delete ]---------------------------------------------
+#
+includes/ucp/ucp_pm_search.php
+
+#
+#-----[ Make directory ]---------------------------------------------
+#
+includes/pm_search/
+
+#
+#-----[ Copy ]---------------------------------------------
+#
+root/includes/pm_search/functions_pm_search.php -> includes/pm_search/functions_pm_search.php
+root/includes/pm_search/ucp_pm_search.php -> includes/pm_search/ucp_pm_search.php
+root/language/en/mods/search_pm_folders.php -> language/en/mods/search_pm_folders.php
+root/styles/prosilver/template/ucp_pm_search.html -> styles/prosilver/template/ucp_pm_search.html
+root/styles/subsilver2/template/ucp_pm_search.html -> styles/subsilver2/template/ucp_pm_search.html
+
+#
+#-----[ Open ]---------------------------------------------
+#
+includes/ucp/ucp_pm.php
+
+#
+#-----[ Find ]---------------------------------------------
+#
+		if($mode == 'search')
+		{
+			$search_keywords = utf8_normalize_nfc(trim(request_var('keywords', '', true)));
+			if($search_keywords == '')
+			{
+				$mode = 'view';
+			}
+		}
+
+#
+#-----[ Replace with ]---------------------------------------------
+#
+Nothing, just delete.
+
+#
+#-----[ Find ]---------------------------------------------
+#
+include($phpbb_root_path . 'includes/ucp/ucp_pm_search.' . $phpEx);
+
+#
+#-----[ Replace with ]---------------------------------------------
+#
+include($phpbb_root_path . 'includes/pm_search/ucp_pm_search.' . $phpEx);
+
+#
+#-----[ Open ]---------------------------------------------
+#
+includes/ucp/ucp_pm_viewfolder.php
+
+#
+#-----[ Find ]---------------------------------------------
+#
+	// BEGIN Search PM-folders
+	$pm_advanced = request_var('pmsearch', '');
+	$user->add_lang(array('search', 'mods/search_pm_folders'));
+
+	// Check if the search-module is active
+	$sql = 'SELECT module_enabled FROM ' . MODULES_TABLE . '
+		WHERE module_basename = "pm"
+		AND module_mode = "search"';
+	$result = $db->sql_query($sql);
+	$pm_search_enabled = (int) $db->sql_fetchfield('module_enabled');
+	$db->sql_freeresult($result);
+	// END Search PM-folders
+
+#
+#-----[ Replace with ]---------------------------------------------
+#
+	// Search PM-folders
+	include($phpbb_root_path . 'includes/pm_search/functions_pm_search.' . $phpEx);
+	$template->assign_vars(pm_search_viewfolder_setup($folder_id, $start));
+
+#
+#-----[ Find ]---------------------------------------------
+#
+		// Search PM-folders
+		'S_DISPLAY_SEARCHBOX'	=> ($auth->acl_get('u_search') && $config['load_search'] && $pm_search_enabled) ? true : false,
+		'S_PM_SEARCHBOX_ACTION'	=> append_sid("{$phpbb_root_path}ucp.$phpEx", "mode=view&amp;action=view_folder&amp;f=$folder_id" . (($start !== 0) ? "&amp;start=$start" : '') . (($pm_advanced == '') ? '&amp;pmsearch=advanced' : '')),
+		'SEARCH_KEYWORDS' => $user->lang['SEARCH_PM_FOLDERS'],
+		'S_PM_SEARCH_ADVANCED' => append_sid("{$phpbb_root_path}ucp.$phpEx", "i=pm&amp;mode=view&amp;action=view_folder&amp;f=$folder_id" . (($start !== 0) ? "&amp;start=$start" : '') . (($pm_advanced == '') ? '&amp;pmsearch=advanced' : '')),
+		'DISPLAY_ADVANCED' => ($pm_advanced == '') ? 'none' : 'block',
+		// END Search PM-folders
+
+#
+#-----[ Replace with ]---------------------------------------------
+#
+Nothing, just delete.
+
+#
+#-----[ EOM ]---------------------------------------------
+#
+Save and close all open files

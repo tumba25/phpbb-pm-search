@@ -1,0 +1,68 @@
+<tr>
+<td class="row1">
+	<form method="post" name="search" action="{S_PM_ACTION}">
+		<span class="gensmall">{L_SEARCH_FOR}:</span>
+		<input type="hidden" name="mode" value="search" />
+<input class="post" type="text" name="keywords" id="search_keywords" size="20" value="{SEARCH_KEYWORDS}" onclick="if (this.value == '{LA_SEARCH_PM_FOLDERS}') this.value = '';" onblur="if (this.value == '') this.value = '{LA_SEARCH_PM_FOLDERS}';" />
+		<input class="btnlite" type="submit" value="{L_GO}" />
+		<a href="{S_PM_SEARCH_ADVANCED}" onclick="if(document.getElementById('pm-search-advanced').style.display == 'none') {document.getElementById('pm-search-advanced').style.display = 'block';} else {document.getElementById('pm-search-advanced').style.display = 'none';} return false;">{L_SEARCH_ADV}</a>
+	<div id="pm-search-advanced" style="width: auto; height: auto; padding-top: 0.5em; display: {DISPLAY_ADVANCED};">
+		<p>{L_PM_SEARCH_EXPLAIN}</p>
+		<table class="tablebg" width="100%" cellspacing="1" cellpadding="0">
+			<tr>
+				<td class="row1" style="width: 70%">{L_PM_SEARCH_ALL_WORDS}:<br />{L_PM_SEARCH_ALL_WORDS_EXPLAIN}</td>
+				<td class="row1" style="width: 30%">
+					<label><input type="radio" name="all_words" value="1" <!-- IF S_SEARCH_ALL_WORDS -->checked="checked" <!-- ENDIF -->/>{L_YES}</label> &nbsp;
+					<label><input type="radio" name="all_words" value="0" <!-- IF not S_SEARCH_ALL_WORDS -->checked="checked" <!-- ENDIF -->/>{L_NO}</label>
+				</td>
+			</tr>
+			<tr>
+				<td class="row1">{L_SEARCH_WITHIN}:</td>
+				<td class="row1">
+					<label><input type="radio" name="within" value="{C_PM_BOTH}" <!-- IF S_WITHIN_BOTH -->checked="checked" <!-- ENDIF -->/>{L_BOTH}</label> &nbsp;
+					<label><input type="radio" name="within" value="{C_PM_SUBJECT}" <!-- IF S_WITHIN_SUBJECT -->checked="checked" <!-- ENDIF -->/>{L_SUBJECT}</label> &nbsp;
+					<label><input type="radio" name="within" value="{C_PM_MESSAGE}" <!-- IF S_WITHIN_MESSAGE -->checked="checked" <!-- ENDIF -->/>{L_MESSAGE}</label> &nbsp;
+				</td>
+			</tr>
+			<tr>
+				<td class="row1" style="width: 70%">{L_PM_SEARCH_WORD_ONLY}:<br />{L_PM_SEARCH_WORD_ONLY_EXPLAIN}</td>
+				<td class="row1" style="width: 30%">
+					<label><input type="radio" name="word" value="1" <!-- IF S_WORD_ONLY -->checked="checked" <!-- ENDIF -->/>{L_YES}</label> &nbsp;
+					<label><input type="radio" name="word" value="0" <!-- IF not S_WORD_ONLY -->checked="checked" <!-- ENDIF -->/>{L_NO}</label>
+				</td>
+			</tr>
+			<tr>
+				<td class="row1" style="width: 70%">{L_PM_SEARCH_EXACT_QUERY}:<br />{L_PM_SEARCH_EXACT_QUERY_EXPLAIN}</td>
+				<td class="row1" style="width: 30%">
+					<label><input type="radio" name="exact" value="1" <!-- IF S_SEARCH_EXACT -->checked="checked" <!-- ENDIF -->/>{L_YES}</label> &nbsp;
+					<label><input type="radio" name="exact" value="0" <!-- IF not S_SEARCH_EXACT -->checked="checked" <!-- ENDIF -->/>{L_NO}</label>
+				</td>
+			</tr>
+			<tr>
+				<td class="row1">{L_PM_SEARCH_CURRENT}:<br />{L_PM_SEARCH_CURRENT_EXPLAIN}</td>
+				<td class="row1">
+					<label><input type="radio" name="current" value="1" <!-- IF S_SEARCH_CURRENT -->checked="checked" <!-- ENDIF -->/>{L_YES}</label> &nbsp;
+					<label><input type="radio" name="current" value="0" <!-- IF not S_SEARCH_CURRENT -->checked="checked" <!-- ENDIF -->/>{L_NO}</label>
+				</td>
+			</tr>
+			<tr>
+				<td class="row1">{L_PM_SEARCH_CASE}:<br />{L_PM_SEARCH_CASE_EXPLAIN}</td>
+				<td class="row1">
+					<label><input type="radio" name="case" value="1" <!-- IF S_SEARCH_CASE -->checked="checked" <!-- ENDIF -->/>{L_YES}</label> &nbsp;
+					<label><input type="radio" name="case" value="0" <!-- IF not S_SEARCH_CASE -->checked="checked" <!-- ENDIF -->/>{L_NO}</label>
+				</td>
+			</tr>
+			<tr>
+				<td class="row1">{L_PM_SEARCH_AUTHOR}:<br />{L_PM_SEARCH_AUTHOR_EXPLAIN}</td>
+				<td class="row1">
+					<label><input type="radio" name="author" value="{C_PM_BOTH}" <!-- IF S_PM_BOTH -->checked="checked" <!-- ENDIF -->/>{L_BOTH}</label> &nbsp;
+					<label><input type="radio" name="author" value="{C_PM_SENDER}" <!-- IF S_PM_SENDER -->checked="checked" <!-- ENDIF -->/>{L_SENDER}</label> &nbsp;
+					<label><input type="radio" name="author" value="{C_PM_RECIPIENT}" <!-- IF S_PM_RECIPIENT -->checked="checked" <!-- ENDIF -->/>{L_RECIPIENT}</label> &nbsp;
+					<label><input type="radio" name="author" value="0" <!-- IF not S_PM_BOTH and not S_PM_SENDER and not S_PM_RECIPIENT -->checked="checked" <!-- ENDIF -->/>{L_NO}</label>
+				</td>
+			</tr>
+		</table>
+	</div>
+	</form>
+</td>
+</tr>

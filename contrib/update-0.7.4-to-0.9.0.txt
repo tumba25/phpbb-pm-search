@@ -1,0 +1,72 @@
+##############################################################
+## MOD Title: Search PM folders
+## MOD Author: tumba25
+##
+## MOD Version: 0.9.0
+##
+## Update instructions from version 0.7.4 -> 0.9.0
+##
+## Included files:
+## includes/pm_search/constants_pm_search.php
+## includes/pm_search/functions_pm_search.php
+## includes/pm_search/pm_search.php
+## language/en/mods/pm_search.php
+## language/en/mods/permissions_pm_search.php
+## styles/prosilver/template/ucp_pm_search.html
+## styles/prosilver/template/ucp_pm_search_results.html
+## styles/subsilver2/template/ucp_pm_search.html
+## styles/subsilver2/template/ucp_pm_search_results.html
+##
+##############################################################
+## Before Adding This MOD To Your Forum, You Should Back Up All Files Related To This MOD
+##############################################################
+#
+#-----[ Copy ]---------------------------------------------
+#
+root/includes/pm_search/* -> includes/pm_search/*
+
+root/install/* -> install/*
+
+root/language/en/mods/permissions_pm_search.php -> language/en/mods/permissions_pm_search.php
+root/language/en/mods/search_pm_folders.php -> language/en/mods/search_pm_folders.php
+
+root/styles/prosilver/template/ucp_pm_search.html -> styles/prosilver/template/ucp_pm_search.html
+root/styles/prosilver/template/ucp_pm_search_results.html -> styles/prosilver/template/ucp_pm_search_results.html
+
+root/styles/subsilver2/template/ucp_pm_search.html -> styles/subsilver2/template/ucp_pm_search.html
+root/styles/subsilver2/template/ucp_pm_search_results.html -> styles/subsilver2/template/ucp_pm_search_results.html
+
+#
+#-----[ Open ]---------------------------------------------
+#
+includes/ucp/ucp_pm.php
+
+#
+#-----[ Find ]---------------------------------------------
+#
+include($phpbb_root_path . 'includes/pm_search/ucp_pm_search.' . $phpEx);
+
+#
+#-----[ Replace with ]---------------------------------------------
+#
+include($phpbb_root_path . 'includes/pm_search/pm_search.' . $phpEx);
+
+#
+#-----[ Open ]---------------------------------------------
+#
+language/en/acp/common.php
+
+#
+#-----[ Find ]---------------------------------------------
+#
+'UCP_PM_SEARCH' => 'Search PM folders',
+
+#
+#-----[ Replace with ]---------------------------------------------
+#
+'UCP_PM_SEARCH' => 'PM Search',
+
+#
+#-----[ EOM ]---------------------------------------------
+#
+Save and close all open files
