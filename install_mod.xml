@@ -24,13 +24,20 @@ Can search for exact query, all words or any word.</description>
 			<email>tumba25@gmail.com</email>
 		</author>
 	</author-group>
-	<mod-version>0.9.2</mod-version>
+	<mod-version>0.9.3</mod-version>
 	<installation>
 		<level>easy</level>
 		<time>300</time>
 		<target-version>3.0.4</target-version>
 	</installation>
 	<history>
+		<entry>
+			<date>2009-03-12</date>
+			<rev-version>0.9.3</rev-version>
+			<changelog lang="en">
+				<change>Some of the changed files where missing from the 0.9.2 package</change>
+			</changelog>
+		</entry>
 		<entry>
 			<date>2009-03-12</date>
 			<rev-version>0.9.2</rev-version>

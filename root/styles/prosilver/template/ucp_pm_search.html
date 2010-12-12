@@ -3,6 +3,7 @@
 		<fieldset>
 			<input class="inputbox search tiny" type="text" name="keywords" id="search_keywords" size="20" value="{SEARCH_KEYWORDS}" onclick="if (this.value == '{LA_SEARCH_PM_FOLDERS}') this.value = '';" onblur="if (this.value == '') this.value = '{LA_SEARCH_PM_FOLDERS}';" />
 			<input type="hidden" name="mode" value="search" />
+			<input type="hidden" name="start" value="0" />
 			<input class="button2" type="submit" value="{L_SEARCH}" />
  		&nbsp;<a href="{S_PM_SEARCH_ADVANCED}" onclick="if(document.getElementById('pm-search-advanced').style.display == 'none') {document.getElementById('pm-search-advanced').style.display = 'block';} else {document.getElementById('pm-search-advanced').style.display = 'none';} return false;">{L_SEARCH_ADV}</a>
 		</fieldset>
