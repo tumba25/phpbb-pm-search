@@ -210,7 +210,7 @@ else if($search_author && $search_exact)
 	$sql_where = '';
 	foreach($keyword_arr as $word)
 	{
-		$word = trim($word);
+		$word = $db->sql_escape(trim($word));
 		if($word != '')
 		{
 			$sql_where .= (($sql_where == '') ?  ' WHERE ' : ' OR ' ) . (($search_case) ? ' username = "' . $word . '"' : ' UPPER(username) = UPPER("' . $word . '")');
@@ -256,7 +256,7 @@ else if($search_author && !$search_exact)
 	$sql_where = '';
 	foreach($keyword_arr as $word)
 	{
-		$word = trim($word);
+		$word = $db->sql_escape(trim($word));
 		if($word != '')
 		{
 			$sql_where .= (($sql_where == '') ?  ' WHERE ' : ' OR ' ) . (($search_case) ? ' username LIKE "%' . $word . '%"' : ' UPPER(username) LIKE UPPER("%' . $word . '%")');

@@ -17,7 +17,7 @@
 				<homepage>http://skripter.se</homepage>
 			</author>
 		</author-group>
-		<mod-version>0.9.0</mod-version>
+		<mod-version>0.9.1</mod-version>
 		<installation>
 			<level>easy</level>
 			<time>180</time>
@@ -27,6 +27,13 @@
 			<link type="template" lang="en-gb" href="./contrib/subsilver2.xml">Instructions for subsilver2 style</link>
 		</link-group>
 		<history>
+			<entry>
+				<date>2009-03-08</date>
+				<rev-version>0.9.1</rev-version>
+				<changelog lang="en-gb">
+					<change>The query-string was not always escaped. Now it is.</change>
+				</changelog>
+			</entry>
 			<entry>
 				<date>2009-03-07</date>
 				<rev-version>0.9.0</rev-version>

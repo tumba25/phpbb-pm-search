@@ -6,7 +6,7 @@
 * @package language
 * @version $Id: pm_search.php 6 2009-11-15 08:32:26Z jari $
 * @copyright (c) 2009 Jari Kanerva tumba25@gmail.com
-* @license http://opensource.org/licenses/gpl-license.php GNU Public License
+* @license http://opensource.org/licenses/gpl-2.0.php GNU Public License version 2
 *
 */
 
