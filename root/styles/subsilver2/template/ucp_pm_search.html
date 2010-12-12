@@ -2,6 +2,7 @@
 <td class="row1">
 	<form method="post" name="search" action="{S_PM_ACTION}">
 		<span class="gensmall">{L_SEARCH_FOR}:</span>
+		<input type="hidden" name="start" value="0" />
 		<input type="hidden" name="mode" value="search" />
 <input class="post" type="text" name="keywords" id="search_keywords" size="20" value="{SEARCH_KEYWORDS}" onclick="if (this.value == '{LA_SEARCH_PM_FOLDERS}') this.value = '';" onblur="if (this.value == '') this.value = '{LA_SEARCH_PM_FOLDERS}';" />
 		<input class="btnlite" type="submit" value="{L_GO}" />

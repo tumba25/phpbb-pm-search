@@ -36,10 +36,10 @@ if (empty($lang) || !is_array($lang))
 // in a url you again do not need to specify an order e.g., 'Click %sHERE%s' is fine
 
 // Adding new category
-$lang['permission_cat']['pm_search'] = 'Search PM folders';
+$lang['permission_cat']['pm_search'] = 'PM Search';
 
 // Adding the permissions
 $lang = array_merge($lang, array(
-	'acl_u_pm_search' => array('lang' => 'Can search PM folders', 'cat' => 'pm'),
+	'acl_u_pm_search' => array('lang' => 'Can use PM search', 'cat' => 'pm'),
 ));
 ?>

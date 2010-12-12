@@ -22,7 +22,7 @@ include($phpbb_root_path . 'common.' . $phpEx);
 // Start session management
 $user->session_begin();
 $auth->acl($user->data);
-$user->setup('mods/search_pm_folders');
+$user->setup('mods/pm_search');
 
 // Setup $auth_admin class so we can add tabulated survey permission options
 include($phpbb_root_path . 'includes/acp/auth.' . $phpEx);
