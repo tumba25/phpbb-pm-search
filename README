@@ -1,0 +1,7 @@
+Adds a search-box in your pm-folders.
+Can search in subjects and/or messages.
+For senders and/or recipients.
+Case sensitive or insensitive.
+Can search for whole or partial words / sentences.
+Can search for exact query, all words or any word.
+This MOD works only with MySQL.
